@@ -50,3 +50,17 @@ fig_sale_by_city = px.pie(
     names='City',
     title= "Sales By City")
 b.plotly_chart(fig_sale_by_city,user_cointainer_width=True)
+d,e = st.columns(2)
+salesbymonth_in_line=px.line(
+    bb,
+    x=bb.values,
+    y=bb.index,
+    title="Sales by Month")
+d.plotly_chart(salesbymonth_in_line,use_container_width=True)
+
+sales_by_monthin_scatter=px.scatter(
+    df_select,
+    x='Total',
+    y='QuantityOrdered',
+    title="Sales By Month")
+e.plotly_chart(sales_by_monthin_scatter,use_container_width=True)#df_select,use total and quantity ordered in x and y
